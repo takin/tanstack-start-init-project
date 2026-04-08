@@ -10,11 +10,11 @@ Apply **once** per new project, from the repo root, **after** [post-init-route-t
 
 ## Required steps
 
-### 1. Clear `<main>` in the index route
+### 1. Add "Hello Agent" in `<main>` for the index route
 
 Open **`src/routes/index.tsx`**.
 
-- Remove **all** JSX children inside **`<main>...</main>`** so `<main>` has no child nodes.
+- Ensure **`<main>...</main>`** includes a child div with the exact text: **`<div>Hello Agent</div>`**.
 - **Keep** the `<main>` element and any **attributes** on it (e.g. `className`, `id`).
 
 ### 2. Delete template chrome and demo files
@@ -24,6 +24,12 @@ If these files exist, **delete** them:
 - **`src/components/Header.tsx`**
 - **`src/components/Footer.tsx`**
 - **`src/components/demo.FormComponent.tsx`**
+- **`src/data/demo-table-data.ts`**
+- **`src/hooks/demo.form-context.ts`**
+- **`src/hooks/demo.form.ts`**
+- **`src/lib/demo-store-devtools.tsx`**
+- **`src/lib/demo-store.ts`**
+- **`src/lib/utils.ts`** — delete only when it is not the shadcn **`cn`** helper (`@/lib/utils` imported by UI components). If it is the standard `cn` file, keep it and remove demo-only imports/usages instead.
 
 ### 3. Clean up `__root.tsx` (Header / Footer)
 
@@ -50,7 +56,7 @@ Deleting `Header.tsx` but leaving `import { Header } from '@/components/Header'`
 
 ## Good Example
 
-**`__root.tsx`** has no Header/Footer imports or calls—only structural wrappers plus **`<Outlet />`**. **`index.tsx`** has `<main className="..."></main>` with no inner content. **`demo.FormComponent.tsx`** is gone and nothing imports it.
+**`__root.tsx`** has no Header/Footer imports or calls—only structural wrappers plus **`<Outlet />`**. **`index.tsx`** has `<main className="..."><div>Hello Agent</div></main>`. **`demo.FormComponent.tsx`** is gone and nothing imports it.
 
 ## Context
 

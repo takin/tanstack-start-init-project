@@ -27,7 +27,7 @@ Replace `<project_name>` with the target directory name (creates that folder).
 
 ```bash
 bunx @tanstack/cli@latest create --no-examples \
-  --add-ons=nitro,table,store,shadcn,form,compiler,drizzle \
+  --add-ons=nitro,table,store,form,compiler,drizzle \
   --package-manager=bun \
   --deployment=nitro \
   --toolchain=biome \
@@ -41,7 +41,6 @@ bunx @tanstack/cli@latest create --no-examples \
 | `--no-examples`                         | Minimal tree without sample routes/pages from the template.                |
 | `nitro` (add-on + `--deployment=nitro`) | Nitro-oriented server/deploy path from the CLI.                            |
 | `table`, `store`, `form`                | TanStack Table, Store, and Form add-ons via the scaffold.                  |
-| `shadcn`                                | shadcn/ui wiring from the official TanStack Start create flow.             |
 | `compiler`                              | React/compiler-related option as offered by the CLI at create time.        |
 | `drizzle`                               | Drizzle ORM scaffolding (migrations/schema layout per generated template). |
 | `--package-manager=bun`                 | Bun as package manager for the new project.                                |
@@ -67,7 +66,7 @@ After scaffold, **always** run these in order:
 
 1. **[rules/post-init-shadcn-init.md](rules/post-init-shadcn-init.md)** — `bunx --bun shadcn@latest init --preset b6Z8GIMhE --template start` from project root.
 2. **[rules/post-init-route-trim.md](rules/post-init-route-trim.md)** — keep only `__root.tsx` and `src/routes/index.tsx`; regen route tree; run Biome/check.
-3. **[rules/post-init-shell-cleanup.md](rules/post-init-shell-cleanup.md)** — empty `<main>` in `src/routes/index.tsx`; delete `Header.tsx`, `Footer.tsx`, and `demo.FormComponent.tsx` under `src/components/` if present; remove Header/Footer **imports and JSX** from `__root.tsx`; remove any `demo.FormComponent` imports/usages; verify with check + dev.
+3. **[rules/post-init-shell-cleanup.md](rules/post-init-shell-cleanup.md)** — follow it fully: Hello Agent inside `<main>` in `index.tsx`, delete listed template/demo files (components, data, hooks, `src/lib` demo store files; see rule for `utils.ts`), remove Header/Footer **imports and JSX** from `__root.tsx`, drop orphaned imports/usages; verify with check + dev.
 
 ## After init
 
