@@ -56,7 +56,7 @@ Remove template styling that ships with TanStack Start and keep only shadcn-comp
 
 ### 6. Verify
 
-1. Run the project’s **Biome / check** script if present (e.g. `bun run check`).
+1. Run the project’s **ESLint / lint** script if present (e.g. `bun run lint` — verify in `package.json`).
 2. Run **`bun run dev`** and confirm the app compiles and the home route renders without errors.
 
 ## Bad Example

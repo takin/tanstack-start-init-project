@@ -16,7 +16,7 @@ Apply this rule **once**, immediately after scaffold succeeds. When [post-init-s
 2. Apply **recursively** for any `*.tsx` under subfolders of `src/routes/` (e.g. `about.tsx`, nested route files).
 3. Remove **empty directories** left under `src/routes/` after deletions.
 4. **Do not** delete generated artifacts such as **`routeTree.gen.ts`**. Run **`bun run dev`** (or the repo’s route/codegen script) so the route tree regenerates after file changes.
-5. Run the project’s **Biome / check** script if present (e.g. `bun run check` from `package.json`).
+5. Run the project’s **ESLint / lint** script if present (e.g. `bun run lint` — verify the script name in `package.json`).
 
 ## Bad Example
 

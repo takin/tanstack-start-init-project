@@ -25,7 +25,7 @@ bunx --bun shadcn@latest init --preset b6Z8GIMhE --template start
 ## After the command
 
 1. If the CLI reports errors, read the message; retry after fixing (e.g. missing peer deps). For flag drift, run `bunx --bun shadcn@latest init --help`.
-2. Run the project’s **Biome / check** script if present.
+2. Run the project’s **ESLint / lint** script if present (verify in `package.json`).
 3. Continue with **route trim** per [post-init-route-trim.md](post-init-route-trim.md), then **shell cleanup** per [post-init-shell-cleanup.md](post-init-shell-cleanup.md).
 
 ## Bad Example

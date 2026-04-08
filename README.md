@@ -1,8 +1,8 @@
 # tanstack-start-project-init
 
-**English:** An [Agent Skill](https://cursor.com/docs/context/rules#agent-skills) for scaffolding **new** [TanStack Start](https://tanstack.com/start) apps with **Bun**, **Biome**, **Nitro** deployment, and CLI add-ons (nitro, table, store, shadcn, form, compiler, drizzle). It encodes a repeatable workflow: `bunx @tanstack/cli create`, then ordered post-init steps (shadcn preset, route trim, shell cleanup).
+**English:** An [Agent Skill](https://cursor.com/docs/context/rules#agent-skills) for scaffolding **new** [TanStack Start](https://tanstack.com/start) apps with **Bun**, **ESLint**, **Nitro** deployment, and CLI add-ons (nitro, table, store, shadcn, form, compiler, drizzle). It encodes a repeatable workflow: `bunx @tanstack/cli create`, then ordered post-init steps (shadcn preset, route trim, shell cleanup).
 
-**Bahasa Indonesia:** Skill agen untuk membuat proyek **baru** TanStack Start dengan Bun, Biome, deploy Nitro, dan add-on CLI di atas. Alurnya: perintah `create` resmi, lalu langkah pasca-init berurutan (preset shadcn, rapikan route, bersihkan template).
+**Bahasa Indonesia:** Skill agen untuk membuat proyek **baru** TanStack Start dengan Bun, ESLint, deploy Nitro, dan add-on CLI di atas. Alurnya: perintah `create` resmi, lalu langkah pasca-init berurutan (preset shadcn, rapikan route, bersihkan template).
 
 ## Repository layout
 
@@ -15,7 +15,7 @@
 
 ## Who should use this
 
-- **AI agents / Cursor:** Load this skill when the user asks to bootstrap a TanStack Start app with this stack (Bun + Biome + Nitro + Drizzle + shadcn, minimal routes after init).
+- **AI agents / Cursor:** Load this skill when the user asks to bootstrap a TanStack Start app with this stack (Bun + ESLint + Nitro + Drizzle + shadcn, minimal routes after init).
 - **Humans:** Use [`SKILL.md`](SKILL.md) as the canonical reference; the `rules/` files are step-by-step playbooks you can run manually.
 
 ## Prerequisites
@@ -32,7 +32,7 @@ bunx @tanstack/cli@latest create --no-examples \
   --add-ons=nitro,table,store,shadcn,form,compiler,drizzle \
   --package-manager=bun \
   --deployment=nitro \
-  --toolchain=biome \
+  --toolchain=eslint \
   <project_name>
 ```
 
@@ -45,7 +45,7 @@ Then `cd <project_name>` and apply the post-init rules **in order**: shadcn init
 
 ## CLI drift
 
-TanStack CLI flags and add-on names can change between releases. If `create` fails, run `bunx @tanstack/cli create --help` and align flags while preserving intent (Bun + Biome + Nitro + the same add-ons).
+TanStack CLI flags and add-on names can change between releases. If `create` fails, run `bunx @tanstack/cli create --help` and align flags while preserving intent (Bun + ESLint + Nitro + the same add-ons).
 
 ## Scope
 

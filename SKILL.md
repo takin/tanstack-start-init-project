@@ -1,7 +1,7 @@
 ---
 name: tanstack-start-project-init
 description: >-
-  Bootstraps TanStack Start apps with Bun, Biome, Nitro deployment, and CLI add-ons
+  Bootstraps TanStack Start apps with Bun, ESLint, Nitro deployment, and CLI add-ons
   (nitro, table, store, shadcn, form, compiler, drizzle) using bunx @tanstack/cli create
   with --no-examples; after create, runs bunx shadcn init with preset b6Z8GIMhE and
   template start, then removes all route modules under src/routes except index.tsx and
@@ -30,7 +30,7 @@ bunx @tanstack/cli@latest create --no-examples \
   --add-ons=nitro,table,store,form,compiler,drizzle \
   --package-manager=bun \
   --deployment=nitro \
-  --toolchain=biome \
+  --toolchain=eslint \
   <project_name>
 ```
 
@@ -44,7 +44,7 @@ bunx @tanstack/cli@latest create --no-examples \
 | `compiler`                              | React/compiler-related option as offered by the CLI at create time.        |
 | `drizzle`                               | Drizzle ORM scaffolding (migrations/schema layout per generated template). |
 | `--package-manager=bun`                 | Bun as package manager for the new project.                                |
-| `--toolchain=biome`                     | Biome for lint/format instead of the default ESLint/Prettier stack.        |
+| `--toolchain=eslint`                    | ESLint (and typical Prettier integration) for lint/format per CLI template. |
 
 ## Agent workflow
 
@@ -65,7 +65,7 @@ Copy and track progress:
 After scaffold, **always** run these in order:
 
 1. **[rules/post-init-shadcn-init.md](rules/post-init-shadcn-init.md)** — `bunx --bun shadcn@latest init --preset b6Z8GIMhE --template start` from project root.
-2. **[rules/post-init-route-trim.md](rules/post-init-route-trim.md)** — keep only `__root.tsx` and `src/routes/index.tsx`; regen route tree; run Biome/check.
+2. **[rules/post-init-route-trim.md](rules/post-init-route-trim.md)** — keep only `__root.tsx` and `src/routes/index.tsx`; regen route tree; run ESLint / project lint script.
 3. **[rules/post-init-shell-cleanup.md](rules/post-init-shell-cleanup.md)** — follow it fully: Hello Agent inside `<main>` in `index.tsx`, delete listed template/demo files (components, data, hooks, `src/lib` demo store files; see rule for `utils.ts`), remove Header/Footer **imports and JSX** from `__root.tsx`, remove default TanStack template CSS and keep only shadcn styles/tokens, drop orphaned imports/usages; verify with check + dev.
 
 ## After init
@@ -79,7 +79,7 @@ After scaffold, **always** run these in order:
 CLI flags and add-on names can change between releases.
 
 1. Run `bunx @tanstack/cli create --help` and align flags with the current output.
-2. Retry with corrected names; keep the same intent (Bun + Biome + Nitro + listed add-ons).
+2. Retry with corrected names; keep the same intent (Bun + ESLint + Nitro + listed add-ons).
 
 ## Anti-patterns
 
