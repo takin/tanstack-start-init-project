@@ -66,7 +66,7 @@ After scaffold, **always** run these in order:
 
 1. **[rules/post-init-shadcn-init.md](rules/post-init-shadcn-init.md)** — `bunx --bun shadcn@latest init --preset b6Z8GIMhE --template start` from project root.
 2. **[rules/post-init-route-trim.md](rules/post-init-route-trim.md)** — keep only `__root.tsx` and `src/routes/index.tsx`; regen route tree; run Biome/check.
-3. **[rules/post-init-shell-cleanup.md](rules/post-init-shell-cleanup.md)** — follow it fully: Hello Agent inside `<main>` in `index.tsx`, delete listed template/demo files (components, data, hooks, `src/lib` demo store files; see rule for `utils.ts`), remove Header/Footer **imports and JSX** from `__root.tsx`, drop orphaned imports/usages; verify with check + dev.
+3. **[rules/post-init-shell-cleanup.md](rules/post-init-shell-cleanup.md)** — follow it fully: Hello Agent inside `<main>` in `index.tsx`, delete listed template/demo files (components, data, hooks, `src/lib` demo store files; see rule for `utils.ts`), remove Header/Footer **imports and JSX** from `__root.tsx`, remove default TanStack template CSS and keep only shadcn styles/tokens, drop orphaned imports/usages; verify with check + dev.
 
 ## After init
 

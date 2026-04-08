@@ -45,7 +45,16 @@ Then search the rest of the codebase (**`src/routes/index.tsx`**, **`src/compone
 
 Search for **`demo.FormComponent`**, **`FormComponent`**, or imports of **`@/components/demo.FormComponent`** (or relative paths to `demo.FormComponent.tsx`). Remove **imports** and **JSX usages** after the file is deleted.
 
-### 5. Verify
+### 5. Remove default template CSS (keep shadcn styles)
+
+Remove template styling that ships with TanStack Start and keep only shadcn-compatible styles:
+
+- Open **`src/styles.css`** (the global stylesheet imported by the app root).
+- Delete all default TanStack/template CSS blocks (layout/demo styles, gradient/background showcase, template utility classes).
+- Keep only shadcn/base design-token layers and utilities (`@tailwind base/components/utilities`, `@layer base`, CSS variables used by shadcn, dark-mode tokens, and minimal global resets required by shadcn).
+- If both template and shadcn define overlapping root variables, keep the shadcn token set as the source of truth.
+
+### 6. Verify
 
 1. Run the project’s **Biome / check** script if present (e.g. `bun run check`).
 2. Run **`bun run dev`** and confirm the app compiles and the home route renders without errors.
