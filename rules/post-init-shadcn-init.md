@@ -15,11 +15,11 @@ Apply **before** [post-init-route-trim.md](post-init-route-trim.md). Any demo or
 ## Required command
 
 ```bash
-bunx --bun shadcn@latest init --preset b6Z8GIMhE --template start
+bunx --bun shadcn@latest init --preset b1ZPbSXf0 --template start
 ```
 
 - **`--bun`** — run the shadcn CLI with the Bun runtime via `bunx`.
-- **`--preset b6Z8GIMhE`** — owner registry preset (do not substitute unless the user asks).
+- **`--preset b1ZPbSXf0`** — owner registry preset (do not substitute unless the user asks).
 - **`--template start`** — TanStack Start–aligned init.
 
 ## After the command
@@ -38,10 +38,10 @@ One non-interactive pass from repo root:
 
 ```bash
 cd my-app
-bunx --bun shadcn@latest init --preset b6Z8GIMhE --template start
+bunx --bun shadcn@latest init --preset b1ZPbSXf0 --template start
 ```
 
 ## Context
 
 - For **adding components** after init, use the **`shadcn`** skill in the workspace.
-- If the user requests a **different preset code**, replace only `b6Z8GIMhE` in this command and document the change in the conversation.
+- If the user requests a **different preset code**, replace only `b1ZPbSXf0` in this command and document the change in the conversation.
